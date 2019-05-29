@@ -1,33 +1,199 @@
-.App {
-  text-align: center;
+/***** Global Classes and declarations *****/
+@font-face { font-family: 'gilroy-mediumuploaded_file'; src: url('./fonts/gilroy-medium_0-webfont.eot'); src: url('./fonts/gilroy-medium_0-webfont.eot?#iefix') format('embedded-opentype'),  url('./fonts/gilroy-medium_0-webfont.woff2') format('woff2'),  url('./fonts/gilroy-medium_0-webfont.woff') format('woff'),  url('./fonts/gilroy-medium_0-webfont.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'gilroy-regularuploaded_file'; src: url('./fonts/gilroy-regular-webfont.eot'); src: url('./fonts/gilroy-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('./fonts/gilroy-regular-webfont.woff2') format('woff2'),  url('./fonts/gilroy-regular-webfont.woff') format('woff'),  url('./fonts/gilroy-regular-webfont.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'gilroy-semibolduploaded_file'; src: url('./fonts/gilroy-semibold-webfont.eot'); src: url('./fonts/gilroy-semibold-webfont.eot?#iefix') format('embedded-opentype'),  url('./fonts/gilroy-semibold-webfont.woff2') format('woff2'),  url('./fonts/gilroy-semibold-webfont.woff') format('woff'),  url('./fonts/gilroy-semibold-webfont.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+
+@font-face {font-family: 'gilroyBold'; src: url('./fonts/Gilroy-Bold.eot'); src: url('./fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'), url('./fonts/Gilroy-Bold.woff') format('woff'), url('./fonts/Gilroy-Bold.svg#y Bold') format('svg'); font-style: normal; font-stretch: normal;}
+
+
+body { font-size: 62.5%; font-family: 'Roboto', sans-serif; font-weight: 300; width: 100%; overflow-x: hidden; }
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, input { margin: 0; padding: 0; list-style: none; }
+a { text-decoration: none; outline: none; }
+a.selected { }
+a:hover.selected { text-decoration: none; }
+/*a:visited{ color:#60615f; text-decoration:underline;}*/
+img { border: none; }
+html { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+p, input, a { color: #5f5f5f }
+h1 { font-size: 1.8em; line-height: 1.2em; }
+h2 { font-size: 1.5em; }
+h3, h3 a { font-size: 1.2em; }
+h4, h4 a { font-size: 1.2em; }
+h5, h5 a { font-size: 1.2em; }
+h6, h6 a { font-size: 1.2em; }
+.nodatfound.errorMsg { float: left; clear: both; color: red; font-size: 1.2em }
+h3 a, h4 a, h5 a, h6 a { font-size: 1em; text-decoration: underline; }
+table, table tr td, table tr th { border: none }
+.clearfix:after { content: "."; /*display: block;*/ clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix {/*display: inline-block;*/ }
+* html .clearfix { height: 1%; }
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); border: none; -webkit-border-radius: 0; border-radius: 0; -webkit-overflow-scrolling: touch; outline: none }
+.clear { font-size: 1%; height: 0; line-height: 0; width: 0; float: none; clear: both; }
+html[xmlns] .clearfix {/*display: block;*/ }
+input { outline: none }
+article, aside, canvas, details, figcaption, figure, main, footer, header, hgroup, menu, nav, section, summary, mark { display: block; width: 100%; float: left; }
+strong { font-weight: normal }
+* { box-sizing: border-box }
+h1, h2, h3, h4, h5, h6 { width: 100%; float: left }
+*{-webkit-box-sizing: border-box; -o-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.vMid{vertical-align: middle; display: table-cell}
+/***** Global Classes and declarations END *****/
+header{position: absolute; left: 0; top: 0; z-index: 2; padding: 0 100px 0 50px; height: 110px}
+
+a.logo{float: left}
+.rgtNav{float: left; width: Calc(100% - 340px); height: 100%;}
+ul.navUL{position: relative; top: 50%; transform: translateY(-50%); margin: 0 0 0 20px;}
+ul.navUL, ul.navUL li, ul.navUL li a{width: auto; float: left}
+ul.navUL li a{font-size: 1.8em; text-transform: capitalize; color: #fff; letter-spacing: 3px; margin: 0 20px; font-weight: 700; transition: all ease 0.6s; position: relative; }
+ul.navUL li a:after{width: 0%; height: 2px; background:#C69E67; content: ''; display: block; position: absolute; bottom: -5px; left: 50%; transition: all ease 0.3s; }
+ul.navUL li a:hover{color: #C69E67}
+ul.navUL li a:hover:after{width: 100%; left: 0}
+
+.rgtBox{width: auto; float: right; position: relative; top: 45px;}
+.rgtBox ul, .rgtBox ul li, .rgtBox ul li a{width: auto; float: left}
+.rgtBox ul li a{margin: 0 0 0 25px;}
+.rgtBox ul li a.hamburger{position: relative; right: 0; float: right; top: 5px;  width: 25px; height: 25px; text-indent: -99px; overflow: hidden}
+.rgtBox ul li a.hamburger img{float: left}
+.rgtBox ul li a.hamburger:after, .rgtBox ul li a.hamburger span:after, .rgtBox ul li a.hamburger span:before{width: 100%; height: 2px; background: #fff; content: ''; position: absolute; left: 0; top: 0; border-radius: 3px;}
+.rgtBox ul li a.hamburger span:after{top: 7px;}
+.rgtBox ul li a.hamburger span:before{top: 14px;}
+
+
+.kma{height: 100vh;}
+.kma .swiper-container{height: 100%;}
+.kma .swiper-slide{background-repeat: no-repeat; background-size: cover; background-position: center center;}
+.kma .caption{width: 620px; float: left; position: absolute; left: 10%; top: 50%; transform:translateY(-50%); opacity: 0; transition: all ease 1.8s; margin-top: 50px;}
+.kma .caption h2{font-size: 7em; color: #fff; font-family: 'gilroyBold'; font-weight: normal; line-height: 1em; transition: all ease 1.5s; opacity: 0; position: relative; top: 25px; transition-delay: 0s;}
+.kma .caption p{font-size: 3em; color: #fff; width: 100%; float: left; margin: 15px 0 50px 0; transition: all ease 1.5s; opacity: 0; position: relative; top: 40px; transition-delay: 0s;}
+.button{width: auto; float: left; padding: 0 40px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: #212121; background: #C69E67; font-size: 2em; height: 60px; line-height: 60px; transition: all ease 0.5s; position: relative}
+.button:hover{ background: #212121; color: #C69E67;}
+
+.kma .caption a.button{ opacity: 0; transition: all ease 1.5s; top: 60px;transition-delay: 0s; }
+.kma .swiper-slide-active .caption{opacity: 1; margin: 0}
+.kma .swiper-slide-active .caption h2{transition-delay: 0.1s; opacity: 1; top: 0 }
+.kma .swiper-slide-active .caption p{transition-delay: 0.2s; opacity: 1; top: 0}
+.kma .swiper-slide-active .caption a.button{ opacity: 1; top: 0; }
+.kma .swiper-pagination{position: absolute; left: auto; right: 20%; width: 225px; bottom: auto; top: 50%; transform: translateY(-50%);  overflow: hidden}
+.kma .swiper-pagination .swiper-pagination-bullet{width: auto; height: auto; background: none; float: right; position: relative; font-size: 2em; color: #fff; clear: both; padding: 0; margin: 10px 0; opacity: 1;}
+.kma .swiper-pagination .swiper-pagination-bullet:after, .kma .swiper-pagination .swiper-pagination-bullet:before{width: 200px; height: 1px; background:#bec1c6; content: ''; position: absolute; left: -225px; top: 50%; transform: translateY(-50%); display: none;  }
+
+.kma .swiper-pagination .swiper-pagination-bullet:after{margin:0 0 0 0; animation: paginationAnim01 1s ease 1;  }
+@keyframes paginationAnim01{
+  0%{margin: 0 0 0 10px}
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.kma .swiper-pagination .swiper-pagination-bullet:before{background:#c69e67; height: 3px; width: 200px; left: -225px; animation: paginationAnim 5s ease-out 1; }
+@keyframes paginationAnim{
+  0%{left: -450px;}
 }
+.kma .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:after, .kma .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before{display: block}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/************ Hitesh Start ************/
+.clear {clear: both;}
+.articles {margin: 100px 0;}
+
+h2.title {font-family: 'gilroyBold'; text-align: center; font-size: 5.6em; margin: 0 0 150px 0; position: relative;}
+h2.title:after {content: ""; position: absolute; bottom: -119px; left: 50%; transform: translateX(-50%); -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -o-transform: translateX(-50%); height: 73px; background-color: #C69E67; width: 2px;}
+
+a.link {display: inline-block; font-size: 1.8em; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; color: #212121; position: relative;}
+a.link span {position: relative; height: 2px; width: 93px; background-color: #C69E67; display: inline-block; margin: 0 25px 0 0; top: -4px;}
+
+
+.whatsOn {margin-top: 60px; text-align: center}
+.whatsOn .subheader {float: left; width: 100%; text-align: center; font-weight: 300;}
+.whatsOn .subheader .header {float: left; width: 100%; font-size: 3.9em; color:#242424; margin-bottom: 25px; letter-spacing: .2em;}
+.whatsOn .subheader .text {float: left; width: 100%; font-size: 2.4em; color: #7E808B; line-height: 1.5em;}
+.whatsOn h2.title {margin-bottom: 45px; margin-top: 140px}
+.whatsOn h2.title:after {bottom: 90px;}
+
+.whatsOn .slider {float: left; width: 100%; margin-bottom: 70px;}
+
+.whatsOn .slider .swiper-container {width:100%;}
+.whatsOn .slider .swiper-container .swiper-slide {transform: scale(.75); -webkit-transform: scale(.75); -moz-transform: scale(.75); -o-transform: scale(.75); opacity: .5; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.whatsOn .slider .swiper-container .swiper-slide-active {transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -o-transform: scale(1); opacity: 1;}
+
+.whatsOn .slider .swiper-container a {float: left; width: 100%; height: 100%; position: relative;}
+.whatsOn .slider .swiper-container .sliderImg {float: left; max-width: 100%; border: 0;}
+.whatsOn .slider .swiper-container .content {float: left; width: 86%; margin: -75px 0 0 7%; background-color: #C69E67; padding: 40px 120px 40px 50px; min-height: 200px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; opacity: 0; position: relative; text-align: left}
+
+.whatsOn .slider .swiper-container .content .tag {float: left; width: 100%; font-size: 1.5em; color: #fff; font-weight: 300; margin-bottom: 5px; letter-spacing: 1px; position: relative;}
+.whatsOn .slider .swiper-container .content .header {display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; float: left;font-family: 'gilroyBold'; font-size: 4.2em; font-weight: bold; color: #242424; margin-bottom: 10px;}
+.whatsOn .slider .swiper-container .content .date {float: left; width: 100%; font-size: 2.2em; color: #fff; font-weight: 300; letter-spacing: 1px;}
+.whatsOn .slider .swiper-container .content .arrow {position: absolute; top: 50%; right: 55px; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); width: 28px; height: 2px; background-color: rgba(255, 255, 255, .75);}
+.whatsOn .slider .swiper-container .content .arrow::before, .whatsOn .slider .swiper-container .content .arrow::after {content: ""; position: absolute; right:-1px; height: 2px; width: 14px; background-color: rgba(255, 255, 255, .75); border-radius: 10px 0 0 10px;}
+.whatsOn .slider .swiper-container .content .arrow::before {top: -5px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -o-transform:rotate(45deg);}
+.whatsOn .slider .swiper-container .content .arrow::after {top: 5px; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg); -o-transform:rotate(-45deg);}
+
+.swiper-button-next, .swiper-button-prev {width: 145px; height: 110px; background-color: #FFFFFF; background-image: none; margin-top: -55px; top: 45%; -webkit-transition: all ease 1.5s; -moz-transition: all ease 1.5s; -o-transition: all ease 1.5s; transition: all ease 1.5s;}
+.swiper-button-next:hover, .swiper-button-prev:hover{background: #C69E67;}
+.swiper-button-prev {left: 13%;}
+.swiper-button-next {right:13%;}
+
+.swiper-button-next .arrow {position: absolute; top: 50%; right: 55px; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); width: 28px; height: 2px; background-color: rgba(0, 0, 0, .75);}
+.swiper-button-next .arrow::before, .swiper-button-next .arrow::after {content: ""; position: absolute; right:-1px; height: 2px; width: 14px; background-color: rgba(0, 0, 0, .75); border-radius: 10px 0 0 10px;}
+.swiper-button-next .arrow::before {top: -5px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -o-transform:rotate(45deg);}
+.swiper-button-next .arrow::after {top: 5px; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg); -o-transform:rotate(-45deg);}
+
+
+.swiper-button-prev .arrow {position: absolute; top: 50%; right: 55px; transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); width: 28px; height: 2px; background-color: rgba(0, 0, 0, .75);}
+.swiper-button-prev .arrow::before, .swiper-button-prev .arrow::after {content: ""; position: absolute; left:-1px; height: 2px; width: 14px; background-color: rgba(0, 0, 0, .75); border-radius: 10px 0 0 10px;}
+.swiper-button-prev .arrow::before {top: -5px; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg); -o-transform:rotate(-45deg);}
+.swiper-button-prev .arrow::after {top: 5px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -o-transform:rotate(45deg);}
+.whatsOn .slider .swiper-container .swiper-slide-active .content {opacity: 1;}
+
+.worldClass {text-align: center;}
+.worldClass .wrapper {max-width: 1500px; width: 90%; margin: 0 auto; display: table;}
+.worldClass h2.title {margin-bottom: 90px;}
+.worldClass h2.title:after {height: 283px; bottom: -310px}
+.worldClass .wrapper .col {float: left; width: 45%;}
+.worldClass .wrapper .col:last-child {float: right;}
+.worldClass .wrapper .col .header {float: left; width: 100%; margin-bottom: 45px; font-weight: 300; color: #212121; letter-spacing: .25em; font-size: 4em;}
+.worldClass .wrapper .col img {float: left; width: 100%; margin-bottom: 60px;}
+/************ Hitesh End  ************/
+
+/*********** planWrapper start *************/
+a.knowMore{width: auto; float: left; font-family: 'gilroyBold'; font-size: 1.4em; text-transform: uppercase; padding: 0 0 0 115px; position: relative; color: #212121; -webkit-transition: all ease 0.5s; -moz-transition: all ease 0.5s; -o-transition: all ease 0.5s; transition: all ease 0.5s; letter-spacing: 2px;}
+a.knowMore:after{width: 90px; height: 1px; background: #C69E67; content: ''; display: block; position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); -webkit-transition: all ease 0.5s; -moz-transition: all ease 0.5s; -o-transition: all ease 0.5s; transition: all ease 0.5s;}
+a.knowMore:hover{color: #C69E67}
+a.knowMore:hover:after{background: #212121; left: 60px; width: 45px;}
+
+.planWrapper h2.title{margin: 0; z-index: 2}
+.planWrapper h2.title span{width: auto; position: relative; padding: 0 35px; left: 15%; float: left}
+.planWrapper h2.title span:after{width: 1px; height:280px; background:#C69E67; content: ''; display: block; position: absolute; left: 0; top: 15px; }
+.planWrapper .swiper-container{width: 100%}
+.planWrapper h2.title:after{display: none}
+.planWrapper .swiper-slide{padding: 50px 0 110px 0;}
+.planWrapper .img{width: 55%; float: left; transition: all ease 1s; opacity: 0; overflow: hidden}
+.planWrapper .img img{width: 100%; float: left; -webkit-transform: scale(1,1); -moz-transform: scale(1,1); -o-transform: scale(1,1); transform: scale(1,1); -webkit-transition: all ease 1s; -moz-transition: all ease 1s; -o-transition: all ease 1s; transition: all ease 1s; }
+.planWrapper .caption{width: 45%; float: left; background: #f5f5f5; height: 100%; position: absolute; right: 0; top: 110px; padding: 110px 175px;}
+.planWrapper .caption h2{font-size: 5em; font-weight: 300; letter-spacing: 4px; margin: 0 0 15px 0; position: relative; -webkit-transition: all ease 1.5s; -moz-transition: all ease 1.5s; -o-transition: all ease 1.5s; transition: all ease 1.5s; top: 20px; opacity: 0}
+.planWrapper .caption p{font-size: 2.4em; font-weight: 300; line-height: 1.5em; margin: 15px 0 25px 0; -webkit-transition: all ease 1.5s; -moz-transition: all ease 1.5s; -o-transition: all ease 1.5s;  transition: all ease 1.5s; top: 40px; opacity: 0; position: relative}
+.planWrapper .caption a.knowMore{top: 20px; opacity: 0 }
+.planWrapper .slideBox{position: relative; width: 100%; float: left; }
+.planWrapper .controls{width: 290px; height: 100px; position: absolute; bottom: 0; left:Calc(55% - 145px); }
+
+
+
+
+.planWrapper .swiper-button-prev{left: 0}
+.planWrapper .swiper-button-next{right: 0px}
+.planWrapper .swiper-slide-active .img{opacity: 1}
+.planWrapper .swiper-slide-active .img img{opacity: 1; -webkit-transform: scale(1.05,1.05); -moz-transform: scale(1.05,1.05); -o-transform: scale(1.05,1.05); transform: scale(1.05,1.05);}
+.planWrapper .swiper-slide-active .caption h2{top: 0; opacity: 1 }
+.planWrapper .swiper-slide-active .caption p{top: 0; opacity: 1 }
+.planWrapper .swiper-slide-active .caption a.knowMore{top: 0; opacity: 1; -webkit-transition: all ease 1s; -moz-transition: all ease 1s; -o-transition: all ease 1s; transition: all ease 1s; -webkit-transition-delay: 0.5s; -moz-transition-delay: 0.5s; -o-transition-delay: 0.5s; transition-delay: 0.5s;  }
+.planWrapper .swiper-slide-active .caption a.knowMore:hover{-webkit-transition: all ease 1s; -moz-transition: all ease 1s; -o-transition: all ease 1s; transition: all ease 1s;}
+.progressBar{font-size: 4.6em; position: absolute; right: 50px; top: 130px; z-index: 2; font-weight: 500; color: #C3C3C3 }
+.progressBar .currentVal{color: #030303}
+
+.planWrapper01 .img{float: right}
+.planWrapper01 .caption{right: auto; left: 0}
+.planWrapper01 .controls{left: Calc(45% - 145px)}
+.planWrapper01 .progressBar{right: auto; left: 35%}
+/*********** planWrapper end  *************/
+
+
