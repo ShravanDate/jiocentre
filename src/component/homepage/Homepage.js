@@ -1,27 +1,27 @@
 import React, {Component} from 'react';
 import Swiper from 'react-id-swiper';
-//import { Pagination, Navigation, Autoplay} from 'swiper/dist/js/swiper.esm'
+import { Pagination, Navigation, Autoplay} from 'swiper/dist/js/swiper.esm'
 
 class Homepage extends React.Component {
   render() {
  	const params = {
  		
-		// modules: [Pagination, Navigation, Autoplay],	    
-		// spaceBetween: 0,		
-		// effect: 'fade',
-		// pagination: {
-		// 	el: '.swiper-pagination',
-		// 	clickable: true,
-		// 	renderBullet: function (index, className) {
-		//   		return '<span class="' + className + '">0' + (index + 1) + '</span>';
-		// 	},
-		// },
-		// navigation:0,
-		// autoplay: {
-		// 	delay: 5000,
-		// 	disableOnInteraction: false,
-		// },
-		// loop: true,
+		modules: [Pagination, Navigation, Autoplay],	    
+		spaceBetween: 0,		
+		effect: 'fade',
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			renderBullet: function (index, className) {
+		  		return '<span class="' + className + '">0' + (index + 1) + '</span>';
+			},
+		},
+		navigation:0,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		loop: true,
 	}
 
 	console.log(params)
